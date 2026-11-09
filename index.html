@@ -85,9 +85,9 @@ h1{text-shadow:0 4px 30px var(--bg);font-size:clamp(40px,8vw,72px);line-height:1
 .code{background:var(--bg2);border:1px solid var(--bd);border-radius:14px;padding:18px;font-size:13px;line-height:1.7;overflow-x:auto;white-space:pre}
 .code .k{color:var(--ac)}.code .s{color:var(--g)}.code .c{color:var(--mu)}
 /* skills */
-#sphere{position:relative;height:min(78vw,440px);max-width:520px;margin:0 auto;cursor:grab;touch-action:pan-y;user-select:none}
+#sphere{position:relative;height:min(88vw,500px);max-width:520px;margin:0 auto;cursor:grab;touch-action:pan-y;user-select:none}
 #sphere:active{cursor:grabbing}
-#sphere b{position:absolute;left:50%;top:50%;font-weight:600;font-size:14px;padding:5px 11px;border-radius:99px;background:var(--bg2);border:1px solid var(--bd);white-space:nowrap;will-change:transform}
+#sphere b{position:absolute;left:50%;top:50%;font-weight:600;font-size:16px;padding:6px 13px;color:var(--tx);border-radius:99px;background:var(--bg2);border:1px solid var(--bd);white-space:nowrap;will-change:transform}
 .hint{text-align:center;color:var(--tx);opacity:.8;font-size:13px;margin-top:8px}
 /* projects */
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
@@ -114,7 +114,6 @@ textarea{min-height:120px;resize:vertical}
 .soc a:hover{color:var(--tx)}
 footer{position:relative;z-index:1;text-align:center;color:var(--mu);font-size:13px;padding:50px 20px 30px}
 .top{position:fixed;right:16px;bottom:max(16px,env(safe-area-inset-bottom));z-index:30;width:42px;height:42px;border-radius:50%;background:var(--ac);color:#fff;display:grid;place-items:center;font-size:18px}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
@@ -253,17 +252,18 @@ const sp=document.getElementById("sphere");
 const els=sk.map((t,i)=>{const b=document.createElement("b");b.textContent=t;sp.appendChild(b);
  const y=1-(i/(sk.length-1))*2,r=Math.sqrt(1-y*y),a=i*2.399963;return{b,x:Math.cos(a)*r,y,z:Math.sin(a)*r}});
 let ax=0.004,ay=0.006,drag=false,lx=0,ly=0;
-sp.addEventListener("pointerdown",e=>{drag=true;lx=e.clientX;ly=e.clientY});
+sp.addEventListener("pointerdown",e=>{drag=true;lx=e.clientX;ly=e.clientY;try{sp.setPointerCapture(e.pointerId)}catch(_){}});
+sp.addEventListener("pointercancel",()=>drag=false);
 addEventListener("pointerup",()=>drag=false);
-addEventListener("pointermove",e=>{if(!drag)return;ay=(e.clientX-lx)*.0006;ax=(e.clientY-ly)*-.0006;lx=e.clientX;ly=e.clientY});
+addEventListener("pointermove",e=>{if(!drag)return;const k=.012,m=.14;ay=Math.max(-m,Math.min(m,(e.clientX-lx)*k));ax=Math.max(-m,Math.min(m,(e.clientY-ly)*-k));lx=e.clientX;ly=e.clientY});
 const reduce=matchMedia("(prefers-reduced-motion:reduce)").matches;
-function frame(){const R=Math.min(sp.clientWidth,sp.clientHeight)*.42;
+function frame(){const R=Math.min(sp.clientWidth,sp.clientHeight)*.5;
  const cy=Math.cos(ay),sy=Math.sin(ay),cx=Math.cos(ax),sx=Math.sin(ax);
  els.forEach(o=>{let x=o.x*cy+o.z*sy,z=-o.x*sy+o.z*cy,y=o.y*cx-z*sx;z=o.y*sx+z*cx;o.x=x;o.y=y;o.z=z;
-  const s=.7+.4*(z+1)/2;o.b.style.transform=`translate(-50%,-50%) translate(${x*R*1.15}px,${y*R}px) scale(${s})`;
-  o.b.style.opacity=.35+.65*(z+1)/2;o.b.style.zIndex=Math.round((z+1)*10)});
- if(!drag){ay+=(.006-ay)*.02;ax+=(.003-ax)*.02}
- if(!reduce)requestAnimationFrame(frame)}
+  const s=.75+.5*(z+1)/2;o.b.style.transform=`translate(-50%,-50%) translate(${x*R*1.15}px,${y*R}px) scale(${s})`;
+  o.b.style.opacity=.5+.5*(z+1)/2;o.b.style.zIndex=Math.round((z+1)*10)});
+ if(drag){ay*=.9;ax*=.9}else{ay+=(.006-ay)*.03;ax+=(.003-ax)*.03}
+ requestAnimationFrame(frame)}
 frame();
 
 // 3D background
@@ -284,11 +284,11 @@ function size(){r.setSize(innerWidth,innerHeight,false);cam.aspect=innerWidth/in
 addEventListener("resize",size);size();
 const clk=new THREE.Clock();
 function loop(){const t=clk.getElapsedTime();
- knot.rotation.x=t*.25+sy*.9;knot.rotation.y=t*.35+sy*.7;knot.position.y=Math.sin(sy*1.6)*1.6;
+ knot.rotation.x=t*.4+sy*.9+my*1.1;knot.rotation.y=t*.55+sy*.7+mx*1.4;knot.rotation.z=Math.sin(t*.3)*.5;knot.position.y=Math.sin(sy*1.6)*1.6+Math.sin(t*.8)*.25;knot.scale.setScalar(1+.07*Math.sin(t*1.4));knot.material.color.setHSL(.72+.07*Math.sin(t*.5),.85,.68);knot.material.opacity=.17+.05*Math.sin(t*1.1);
  ico.rotation.x=t*.4;ico.rotation.y=t*.5-sy;ico.position.y=-1.5+Math.cos(sy*2)*1.2;
  pts.rotation.y=t*.03+mx*.4;pts.rotation.x=my*.25+sy*.25;
  cam.position.x+=(mx*1.6-cam.position.x)*.05;cam.position.y+=(-my*1-cam.position.y)*.05;cam.lookAt(0,0,0);
- r.render(sc,cam);if(!reduce)requestAnimationFrame(loop)}
+ r.render(sc,cam);requestAnimationFrame(loop)}
 loop();
 })();
 
