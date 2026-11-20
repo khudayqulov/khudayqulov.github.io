@@ -102,10 +102,10 @@
       z-index: 1;
       pointer-events: none;
       background: radial-gradient(
-        560px circle at var(--mx, 50%) var(--my, 50%),
-        rgba(139, 124, 255, 0.15),
-        rgba(74, 222, 128, 0.05) 38%,
-        transparent 70%
+        580px circle at var(--mx, 50%) var(--my, 50%),
+        rgba(139, 124, 255, 0.17),
+        rgba(74, 222, 128, 0.06) 40%,
+        transparent 72%
       );
     }
 
@@ -723,7 +723,7 @@
     .avatar-tilt-wrapper {
       position: relative;
       width: min(350px, 82vw);
-      aspect-ratio: 4 / 4.6;
+      aspect-ratio: 4 / 4.7;
       transform-style: preserve-3d;
       transition: transform 0.16s ease-out;
       will-change: transform;
@@ -773,6 +773,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center 24%;
       display: block;
     }
 
@@ -1303,7 +1304,7 @@
       <div class="hero-content">
         <div class="hero-badge">
           <span class="status-dot"></span>
-          <span data-i18n="heroStatus">Available for backend &amp; bot architecture</span>
+          <span data-i18n="heroStatus">Открыт к backend-проектам и Telegram-ботам</span>
         </div>
         <p class="hero-greeting" data-i18n="heroGreeting">&gt; Привет, меня зовут</p>
         <h1 class="hero-name">Javohir</h1>
@@ -1313,7 +1314,7 @@
           <span class="type-cursor"></span>
         </div>
         <p class="hero-desc" data-i18n="heroDesc">
-          Проектирую высоконагруженные API, асинхронные сервисы и Telegram-экосистемы на Python и FastAPI. Сотрудничаю с заказчиками через Upwork, Kwork и Telegram-каналы.
+          Проектирую высоконагруженные API, асинхронные сервисы и Telegram-экосистемы на Python и FastAPI. Нахожу клиентов и веду проекты через Upwork, Kwork и Telegram-каналы.
         </p>
         <div class="hero-buttons">
           <a href="#projects" data-route="~/projects" class="btn btn-primary" data-i18n="btnProjects">Проекты</a>
@@ -1328,7 +1329,7 @@
               <img
                 id="avatar-img"
                 alt="Javohir — Backend Developer"
-                src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMTAwIDEwMCI+PHJlY3Qgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIGZpbGw9IiMwYTExMjAiLz48Y2lyY2xlIGN4PSI1MCIgY3k9IjM4IiByPSIxOCIgZmlsbD0iIzhiN2NmZiIvPjxwYXRoIGQ9IkIyMCA5MiBDMjAgNjggODAgNjggODAgOTIiIGZpbGw9IiM0YWRlODAiLz48L3N2Zz4="
+                src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iIzBhMTEyMCIvPjxjaXJjbGUgY3g9IjUwIiBjeT0iMzgiIHI9IjE4IiBmaWxsPSIjOGI3Y2ZmIi8+PHBhdGggZD0iQjIwIDkyIEMyMCA2OCA4MCA2OCA4MCA5MiIgZmlsbD0iIzRhZGU4MCIvPjwvc3ZnPg=="
               />
             </div>
           </div>
@@ -1360,10 +1361,10 @@
               Я Backend-разработчик, специализирующийся на создании отказоустойчивых веб-сервисов, REST API и асинхронных систем на Python, FastAPI, SQLAlchemy, PostgreSQL и Redis.
             </p>
             <p data-i18n="aboutP2">
-              Отвечаю за полный цикл серверной разработки: от проектирования схемы базы данных и интеграции внешних сервисов через asyncio/httpx до настройки Nginx, systemd и деплоя на AWS EC2.
+              Отвечаю за полный цикл серверной разработки: от проектирования архитектуры базы данных и интеграции внешних сервисов через asyncio/httpx до настройки Nginx, systemd и деплоя на AWS EC2.
             </p>
             <p data-i18n="aboutP3">
-              Успешно работаю с клиентами на Upwork, Kwork и в профильных Telegram-каналах — превращаю бизнес-задачи в чистый, масштабируемый и предсказуемый продакшн-код.
+              Успешно сотрудничаю с заказчиками через Upwork, Kwork и профильные Telegram-каналы — превращаю бизнес-задачи в чистый, масштабируемый и надёжный продакшн-код.
             </p>
           </div>
 
@@ -1511,7 +1512,7 @@ app = FastAPI(title=<span class="tok-str">"Javohir API"</span>)</code></pre>
           <h2 class="section-title" data-i18n="contactTitle">Связаться со мной</h2>
         </div>
         <p class="contact-subtitle" data-i18n="contactSub">
-          Открыт к заказам на backend-разработку, API и Telegram-ботов. Пишите напрямую в Telegram или смотрите код на GitHub.
+          Открыт к заказам на backend-разработку, API и Telegram-ботов. Пишите напрямую в Telegram или изучайте репозитории на GitHub.
         </p>
 
         <div class="contact-buttons">
@@ -1559,89 +1560,69 @@ app = FastAPI(title=<span class="tok-str">"Javohir API"</span>)</code></pre>
       "use strict";
 
       /* =========================================================================
-         0. EMBEDDED BASE64 PORTRAIT GENERATOR
-         Agar o'zingizning shaxsiy rasmingizni qo'ymoqchi bo'lsangiz, pastdagi
-         CUSTOM_PHOTO_BASE64 ichiga "data:image/jpeg;base64,..." satrini yozing.
+         0. EMBEDDED BASE64 PORTRAIT
+         20261024_103745.jpg rasmingizni quyidagi o'zgaruvchi ichiga joylashtiring:
       ========================================================================= */
       const CUSTOM_PHOTO_BASE64 = "";
 
       function generateDeveloperAvatarDataURI() {
         const c = document.createElement("canvas");
         c.width = 480;
-        c.height = 552;
+        c.height = 564;
         const ctx = c.getContext("2d");
         if (!ctx) return "";
 
-        // Deep ink-blue backdrop
-        const bgGrad = ctx.createLinearGradient(0, 0, 480, 552);
+        const bgGrad = ctx.createLinearGradient(0, 0, 480, 564);
         bgGrad.addColorStop(0, "#080f1e");
         bgGrad.addColorStop(0.55, "#111b36");
         bgGrad.addColorStop(1, "#1b1642");
         ctx.fillStyle = bgGrad;
-        ctx.fillRect(0, 0, 480, 552);
+        ctx.fillRect(0, 0, 480, 564);
 
-        // Subtle cyber grid
-        ctx.strokeStyle = "rgba(139, 124, 255, 0.12)";
+        ctx.strokeStyle = "rgba(139, 124, 255, 0.14)";
         ctx.lineWidth = 1;
         for (let x = 24; x < 480; x += 32) {
           ctx.beginPath();
           ctx.moveTo(x, 0);
-          ctx.lineTo(x, 552);
+          ctx.lineTo(x, 564);
           ctx.stroke();
         }
-        for (let y = 24; y < 552; y += 32) {
+        for (let y = 24; y < 564; y += 32) {
           ctx.beginPath();
           ctx.moveTo(0, y);
           ctx.lineTo(480, y);
           ctx.stroke();
         }
 
-        // Ambient aura behind silhouette
-        const halo = ctx.createRadialGradient(240, 220, 20, 240, 220, 200);
-        halo.addColorStop(0, "rgba(139, 124, 255, 0.34)");
-        halo.addColorStop(0.6, "rgba(74, 222, 128, 0.12)");
+        const halo = ctx.createRadialGradient(240, 225, 20, 240, 225, 210);
+        halo.addColorStop(0, "rgba(139, 124, 255, 0.36)");
+        halo.addColorStop(0.6, "rgba(74, 222, 128, 0.14)");
         halo.addColorStop(1, "rgba(10, 17, 32, 0)");
         ctx.fillStyle = halo;
-        ctx.fillRect(0, 0, 480, 552);
+        ctx.fillRect(0, 0, 480, 564);
 
-        // Hoodie shoulders
-        const hoodieGrad = ctx.createLinearGradient(80, 360, 400, 552);
-        hoodieGrad.addColorStop(0, "#151f38");
-        hoodieGrad.addColorStop(1, "#0d1528");
-        ctx.fillStyle = hoodieGrad;
+        // Silhouette
+        ctx.fillStyle = "#151f38";
         ctx.beginPath();
-        ctx.moveTo(64, 552);
-        ctx.bezierCurveTo(64, 415, 145, 382, 240, 382);
-        ctx.bezierCurveTo(335, 382, 416, 415, 416, 552);
+        ctx.moveTo(64, 564);
+        ctx.bezierCurveTo(64, 420, 145, 386, 240, 386);
+        ctx.bezierCurveTo(335, 386, 416, 420, 416, 564);
         ctx.closePath();
         ctx.fill();
-
         ctx.strokeStyle = "#8b7cff";
         ctx.lineWidth = 3;
         ctx.stroke();
 
-        // Collar & glowing green zipper accent
-        ctx.strokeStyle = "#4ade80";
-        ctx.lineWidth = 2.5;
-        ctx.beginPath();
-        ctx.moveTo(188, 386);
-        ctx.lineTo(240, 472);
-        ctx.lineTo(292, 386);
-        ctx.stroke();
-
-        // Neck
         ctx.fillStyle = "#dfb095";
         ctx.beginPath();
-        ctx.roundRect(210, 314, 60, 82, 24);
+        ctx.roundRect(210, 316, 60, 82, 24);
         ctx.fill();
 
-        // Head
         ctx.fillStyle = "#f0c4a8";
         ctx.beginPath();
         ctx.ellipse(240, 232, 78, 96, 0, 0, Math.PI * 2);
         ctx.fill();
 
-        // Styled modern dark hair
         ctx.fillStyle = "#0e1629";
         ctx.beginPath();
         ctx.moveTo(156, 218);
@@ -1652,67 +1633,11 @@ app = FastAPI(title=<span class="tok-str">"Javohir API"</span>)</code></pre>
         ctx.closePath();
         ctx.fill();
 
-        // Eyebrows
-        ctx.strokeStyle = "#1e293b";
-        ctx.lineWidth = 4.5;
-        ctx.lineCap = "round";
-        ctx.beginPath();
-        ctx.moveTo(184, 198);
-        ctx.quadraticCurveTo(205, 192, 224, 199);
-        ctx.moveTo(256, 199);
-        ctx.quadraticCurveTo(275, 192, 296, 198);
-        ctx.stroke();
-
-        // Developer glasses with code reflection
-        ctx.fillStyle = "rgba(10, 17, 32, 0.78)";
-        ctx.strokeStyle = "#8b7cff";
-        ctx.lineWidth = 3.2;
-
-        ctx.beginPath();
-        ctx.roundRect(176, 208, 54, 32, 9);
-        ctx.fill();
-        ctx.stroke();
-
-        ctx.beginPath();
-        ctx.roundRect(250, 208, 54, 32, 9);
-        ctx.fill();
-        ctx.stroke();
-
-        // Glasses bridge
-        ctx.beginPath();
-        ctx.moveTo(230, 222);
-        ctx.lineTo(250, 222);
-        ctx.stroke();
-
-        // Green code lines reflected on lenses
-        ctx.strokeStyle = "#4ade80";
-        ctx.lineWidth = 2.4;
-        ctx.beginPath();
-        ctx.moveTo(186, 220);
-        ctx.lineTo(214, 220);
-        ctx.moveTo(190, 228);
-        ctx.lineTo(208, 228);
-        ctx.moveTo(260, 220);
-        ctx.lineTo(290, 220);
-        ctx.moveTo(264, 228);
-        ctx.lineTo(282, 228);
-        ctx.stroke();
-
-        // Confident subtle smile
-        ctx.strokeStyle = "#9c6b54";
-        ctx.lineWidth = 3.5;
-        ctx.beginPath();
-        ctx.moveTo(218, 282);
-        ctx.quadraticCurveTo(240, 296, 262, 282);
-        ctx.stroke();
-
-        // Terminal HUD overlays
         ctx.font = "bold 15px Consolas, monospace";
         ctx.fillStyle = "#4ade80";
         ctx.fillText("> javohir@dev:~$", 26, 38);
-
         ctx.fillStyle = "rgba(139, 124, 255, 0.9)";
-        ctx.fillText("PID: 2026 | ASYNC_WORKER: OK", 26, 526);
+        ctx.fillText("PHOTO_SLOT: READY", 26, 536);
 
         return c.toDataURL("image/png");
       }
@@ -1839,11 +1764,8 @@ app = FastAPI(title=<span class="tok-str">"Javohir API"</span>)</code></pre>
         }
       };
 
-      let currentLang = "ru";
-
       function applyLanguage(lang) {
         if (!TRANSLATIONS[lang]) return;
-        currentLang = lang;
         document.documentElement.lang = lang;
 
         const dict = TRANSLATIONS[lang];
@@ -1917,7 +1839,6 @@ app = FastAPI(title=<span class="tok-str">"Javohir API"</span>)</code></pre>
       let introFinished = false;
       let matrixAnimId = null;
 
-      // Matrix Rain Canvas
       function startMatrixRain() {
         if (!matrixCanvas) return;
         const ctx = matrixCanvas.getContext("2d");
@@ -2029,13 +1950,11 @@ app = FastAPI(title=<span class="tok-str">"Javohir API"</span>)</code></pre>
         await sleep(260);
         if (introFinished) return;
 
-        // 1. whoami
         await typeCommand("whoami");
         await sleep(120);
         appendOutput("javohir — Backend Developer (Python / FastAPI / Distributed Systems)", "term-out");
         await sleep(240);
 
-        // 2. cat stack.txt
         await typeCommand("cat stack.txt");
         await sleep(120);
         appendOutput(
@@ -2044,7 +1963,6 @@ app = FastAPI(title=<span class="tok-str">"Javohir API"</span>)</code></pre>
         );
         await sleep(260);
 
-        // 3. ./deploy.sh --prod + progress bar [█████░░░] 0-100%
         await typeCommand("./deploy.sh --prod");
         await sleep(100);
         const progLine = appendOutput("[░░░░░░░░░░░░░░░░░░░░] 0%", "term-progress");
@@ -2060,7 +1978,6 @@ app = FastAPI(title=<span class="tok-str">"Javohir API"</span>)</code></pre>
         }
         await sleep(200);
 
-        // 4. open portfolio -> access granted
         await typeCommand("open portfolio");
         await sleep(140);
         appendOutput("access granted", "term-granted");
@@ -2068,7 +1985,6 @@ app = FastAPI(title=<span class="tok-str">"Javohir API"</span>)</code></pre>
 
         if (introFinished) return;
 
-        // Blur terminal and show glitch JAVOHIR / BACKEND DEVELOPER
         if (introTerminal) introTerminal.classList.add("blurred");
         if (introGlitchStage) introGlitchStage.classList.add("active");
 
@@ -2363,11 +2279,9 @@ app = FastAPI(title=<span class="tok-str">"Javohir API"</span>)</code></pre>
           for (let i = 0; i < nodes.length; i++) {
             const n = nodes[i];
 
-            // Rotate around X
             const y1 = n.y * cosX - n.z * sinX;
             const z1 = n.z * cosX + n.y * sinX;
 
-            // Rotate around Y
             const x2 = n.x * cosY + z1 * sinY;
             const z2 = z1 * cosY - n.x * sinY;
 
@@ -2380,8 +2294,7 @@ app = FastAPI(title=<span class="tok-str">"Javohir API"</span>)</code></pre>
             const screenX = n.x * radius * scale;
             const screenY = n.y * radius * scale;
 
-            // Depth: front is crisp & bright, back is smaller & blurred
-            const depthRatio = (n.z + 1) / 2; // 0 (back) .. 1 (front)
+            const depthRatio = (n.z + 1) / 2;
             const opacity = 0.24 + depthRatio * 0.76;
             const blurPx = (1 - depthRatio) * 3.2;
 
@@ -2392,7 +2305,6 @@ app = FastAPI(title=<span class="tok-str">"Javohir API"</span>)</code></pre>
           }
 
           if (!isDragging) {
-            // Smooth inertia decay back to gentle auto-spin
             velX = velX * 0.96 + 0.0032 * 0.04;
             velY = velY * 0.96 + 0.0062 * 0.04;
           }
@@ -2404,8 +2316,31 @@ app = FastAPI(title=<span class="tok-str">"Javohir API"</span>)</code></pre>
       }
 
       /* =========================================================================
-         9. THREE.JS FIXED 3D BACKGROUND (1500 PARTICLES + TORUSKNOT + ICOSAHEDRON)
+         9. UPGRADED THREE.JS 3D BACKGROUND
+            - 1800 Soft Glowing Sprite Particles with Wave Drift
+            - Dual-Layer Wireframe TorusKnot + Orbital Energy Rings
+            - Glowing Green Icosahedron + Purple Octahedron Satellite
+            - Animated 3D Cyber-Wave Floor Grid + Smooth Camera Parallax
       ========================================================================= */
+      function createGlowSpriteTexture() {
+        const c = document.createElement("canvas");
+        c.width = 64;
+        c.height = 64;
+        const ctx = c.getContext("2d");
+        if (!ctx) return null;
+
+        const grad = ctx.createRadialGradient(32, 32, 0, 32, 32, 32);
+        grad.addColorStop(0, "rgba(255, 255, 255, 1)");
+        grad.addColorStop(0.28, "rgba(255, 255, 255, 0.78)");
+        grad.addColorStop(0.65, "rgba(255, 255, 255, 0.2)");
+        grad.addColorStop(1, "rgba(255, 255, 255, 0)");
+        ctx.fillStyle = grad;
+        ctx.fillRect(0, 0, 64, 64);
+
+        const tex = new THREE.CanvasTexture(c);
+        return tex;
+      }
+
       function initThreeBackground() {
         const canvas = document.getElementById("bg-canvas");
         if (!canvas || typeof window.THREE === "undefined") return;
@@ -2421,29 +2356,37 @@ app = FastAPI(title=<span class="tok-str">"Javohir API"</span>)</code></pre>
         renderer.setSize(window.innerWidth, window.innerHeight);
 
         const scene = new THREE.Scene();
+        scene.fog = new THREE.FogExp2(0x0a1120, 0.0085);
+
         const camera = new THREE.PerspectiveCamera(
           58,
           window.innerWidth / window.innerHeight,
           0.1,
           1000
         );
-        camera.position.z = 34;
+        camera.position.set(0, 1.5, 36);
 
-        // 1500 Particles
-        const particleCount = 1500;
+        // 1. 1800 Soft Glowing Particles
+        const particleCount = 1800;
         const positions = new Float32Array(particleCount * 3);
+        const basePositions = new Float32Array(particleCount * 3);
         const colors = new Float32Array(particleCount * 3);
+
         const cPurple = new THREE.Color(0x8b7cff);
         const cGreen = new THREE.Color(0x4ade80);
-        const cBlue = new THREE.Color(0x38bdf8);
+        const cCyan = new THREE.Color(0x38bdf8);
 
         for (let i = 0; i < particleCount; i++) {
           const i3 = i * 3;
-          positions[i3] = (Math.random() - 0.5) * 115;
-          positions[i3 + 1] = (Math.random() - 0.5) * 115;
-          positions[i3 + 2] = (Math.random() - 0.5) * 90;
+          const x = (Math.random() - 0.5) * 130;
+          const y = (Math.random() - 0.5) * 120;
+          const z = (Math.random() - 0.5) * 100;
 
-          const pick = i % 5 === 0 ? cGreen : i % 3 === 0 ? cBlue : cPurple;
+          positions[i3] = basePositions[i3] = x;
+          positions[i3 + 1] = basePositions[i3 + 1] = y;
+          positions[i3 + 2] = basePositions[i3 + 2] = z;
+
+          const pick = i % 4 === 0 ? cGreen : i % 3 === 0 ? cCyan : cPurple;
           colors[i3] = pick.r;
           colors[i3 + 1] = pick.g;
           colors[i3 + 2] = pick.b;
@@ -2453,42 +2396,124 @@ app = FastAPI(title=<span class="tok-str">"Javohir API"</span>)</code></pre>
         particleGeo.setAttribute("position", new THREE.BufferAttribute(positions, 3));
         particleGeo.setAttribute("color", new THREE.BufferAttribute(colors, 3));
 
+        const spriteTex = createGlowSpriteTexture();
         const particleMat = new THREE.PointsMaterial({
-          size: 0.24,
+          size: 0.65,
+          map: spriteTex,
           vertexColors: true,
           transparent: true,
-          opacity: 0.78
+          opacity: 0.85,
+          depthWrite: false,
+          blending: THREE.AdditiveBlending
         });
 
         const particles = new THREE.Points(particleGeo, particleMat);
         scene.add(particles);
 
-        // Large Wireframe TorusKnot (Spiral)
-        const torusGeo = new THREE.TorusKnotGeometry(10.5, 2.9, 140, 20);
+        // 2. Hero Centerpiece Group: Dual-Layer TorusKnot + 2 Orbital Rings
+        const spiralGroup = new THREE.Group();
+        spiralGroup.position.set(6.5, 0.5, -4);
+        scene.add(spiralGroup);
+
+        const torusGeo = new THREE.TorusKnotGeometry(10.2, 2.75, 160, 24);
         const torusMat = new THREE.MeshBasicMaterial({
           color: 0x8b7cff,
           wireframe: true,
           transparent: true,
-          opacity: 0.22
+          opacity: 0.25
         });
         const torusKnot = new THREE.Mesh(torusGeo, torusMat);
-        torusKnot.position.set(6, 0, -4);
-        scene.add(torusKnot);
+        spiralGroup.add(torusKnot);
 
-        // Small Green Wireframe Icosahedron
-        const icoGeo = new THREE.IcosahedronGeometry(3.2, 1);
+        // Inner harmonic wireframe knot
+        const innerTorusGeo = new THREE.TorusKnotGeometry(6.4, 1.5, 110, 16);
+        const innerTorusMat = new THREE.MeshBasicMaterial({
+          color: 0x4ade80,
+          wireframe: true,
+          transparent: true,
+          opacity: 0.14
+        });
+        const innerTorus = new THREE.Mesh(innerTorusGeo, innerTorusMat);
+        spiralGroup.add(innerTorus);
+
+        // Orbital Ring 1 (Purple/Cyan)
+        const ring1Geo = new THREE.TorusGeometry(15.5, 0.06, 12, 120);
+        const ring1Mat = new THREE.MeshBasicMaterial({
+          color: 0x8b7cff,
+          transparent: true,
+          opacity: 0.34
+        });
+        const orbitRing1 = new THREE.Mesh(ring1Geo, ring1Mat);
+        orbitRing1.rotation.x = Math.PI * 0.36;
+        orbitRing1.rotation.y = Math.PI * 0.18;
+        spiralGroup.add(orbitRing1);
+
+        // Orbital Ring 2 (Green)
+        const ring2Geo = new THREE.TorusGeometry(17.8, 0.05, 12, 120);
+        const ring2Mat = new THREE.MeshBasicMaterial({
+          color: 0x4ade80,
+          transparent: true,
+          opacity: 0.24
+        });
+        const orbitRing2 = new THREE.Mesh(ring2Geo, ring2Mat);
+        orbitRing2.rotation.x = -Math.PI * 0.28;
+        orbitRing2.rotation.y = Math.PI * 0.42;
+        spiralGroup.add(orbitRing2);
+
+        // 3. Green Wireframe Icosahedron + Inner Glowing Core
+        const icoGroup = new THREE.Group();
+        icoGroup.position.set(-14, 7.5, 2);
+        scene.add(icoGroup);
+
+        const icoGeo = new THREE.IcosahedronGeometry(3.3, 1);
         const icoMat = new THREE.MeshBasicMaterial({
           color: 0x4ade80,
           wireframe: true,
           transparent: true,
-          opacity: 0.36
+          opacity: 0.42
         });
         const icosahedron = new THREE.Mesh(icoGeo, icoMat);
-        icosahedron.position.set(-14, 7, 2);
-        scene.add(icosahedron);
+        icoGroup.add(icosahedron);
 
-        const colorStart = new THREE.Color(0x8b7cff);
-        const colorEnd = new THREE.Color(0x38bdf8);
+        const icoCoreGeo = new THREE.IcosahedronGeometry(1.5, 0);
+        const icoCoreMat = new THREE.MeshBasicMaterial({
+          color: 0x4ade80,
+          wireframe: true,
+          transparent: true,
+          opacity: 0.22
+        });
+        const icoCore = new THREE.Mesh(icoCoreGeo, icoCoreMat);
+        icoGroup.add(icoCore);
+
+        // Secondary Satellite Octahedron
+        const satGeo = new THREE.OctahedronGeometry(1.75, 0);
+        const satMat = new THREE.MeshBasicMaterial({
+          color: 0x38bdf8,
+          wireframe: true,
+          transparent: true,
+          opacity: 0.38
+        });
+        const satellite = new THREE.Mesh(satGeo, satMat);
+        satellite.position.set(-18, -8, -3);
+        scene.add(satellite);
+
+        // 4. Subtle Perspective Cyber-Wave Grid Floor
+        const gridGeo = new THREE.PlaneGeometry(160, 110, 36, 24);
+        gridGeo.rotateX(-Math.PI / 2);
+        const gridMat = new THREE.MeshBasicMaterial({
+          color: 0x8b7cff,
+          wireframe: true,
+          transparent: true,
+          opacity: 0.075
+        });
+        const cyberGrid = new THREE.Mesh(gridGeo, gridMat);
+        cyberGrid.position.set(0, -24, -18);
+        scene.add(cyberGrid);
+        const gridPosAttr = gridGeo.attributes.position;
+
+        const colorPurple = new THREE.Color(0x8b7cff);
+        const colorCyan = new THREE.Color(0x38bdf8);
+        const colorGreen = new THREE.Color(0x4ade80);
         const tempColor = new THREE.Color();
 
         window.addEventListener("resize", () => {
@@ -2501,36 +2526,76 @@ app = FastAPI(title=<span class="tok-str">"Javohir API"</span>)</code></pre>
 
         function animateThree() {
           const t = clock.getElapsedTime();
-          const scrollProgress = Math.min(window.scrollY / (document.body.scrollHeight || 1), 1);
+          const maxScroll = Math.max(1, document.body.scrollHeight - window.innerHeight);
+          const scrollProgress = Math.min(window.scrollY / maxScroll, 1);
 
-          // Continuous rotation + breathing scale + purple-to-blue color shift + mouse tilt + scroll shift
+          // Spiral group: continuous rotation + breathing scale + color morph + mouse tilt + scroll shift
           torusKnot.rotation.z = t * 0.16;
-          torusKnot.rotation.x += (normMouseY * 0.45 + scrollProgress * 2.2 - torusKnot.rotation.x) * 0.04;
-          torusKnot.rotation.y += (normMouseX * 0.55 + t * 0.22 - torusKnot.rotation.y) * 0.04;
+          torusKnot.rotation.x += (normMouseY * 0.5 + scrollProgress * 2.4 - torusKnot.rotation.x) * 0.045;
+          torusKnot.rotation.y += (normMouseX * 0.6 + t * 0.22 - torusKnot.rotation.y) * 0.045;
+
+          innerTorus.rotation.x = -t * 0.25;
+          innerTorus.rotation.y = -t * 0.32;
+
+          orbitRing1.rotation.z = t * 0.28;
+          orbitRing2.rotation.z = -t * 0.22;
 
           const breathe = 1 + Math.sin(t * 1.45) * 0.085;
-          torusKnot.scale.set(breathe, breathe, breathe);
+          spiralGroup.scale.set(breathe, breathe, breathe);
 
-          torusKnot.position.y = -scrollProgress * 12 + Math.sin(t * 0.7) * 0.8;
-          torusKnot.position.x = 6 - scrollProgress * 8;
+          spiralGroup.position.y = 0.5 - scrollProgress * 11 + Math.sin(t * 0.7) * 0.85;
+          spiralGroup.position.x = 6.5 - scrollProgress * 9;
 
+          // Smooth color transition purple -> cyan -> purple
           const colorMix = (Math.sin(t * 0.65) + 1) * 0.5;
-          tempColor.lerpColors(colorStart, colorEnd, colorMix);
+          tempColor.lerpColors(colorPurple, colorCyan, colorMix);
           torusMat.color.copy(tempColor);
+          ring1Mat.color.copy(tempColor);
 
-          // Green Icosahedron orbit & spin
+          // Green Icosahedron orbit & counter-rotating core
           icosahedron.rotation.x = t * 0.42;
           icosahedron.rotation.y = t * 0.55;
-          icosahedron.position.x = -13 + Math.cos(t * 0.5) * 2.4;
-          icosahedron.position.y = 6 + Math.sin(t * 0.65) * 2.2 - scrollProgress * 6;
+          icoCore.rotation.x = -t * 0.7;
+          icoCore.rotation.y = -t * 0.6;
+          icoGroup.position.x = -13.5 + Math.cos(t * 0.48) * 2.6;
+          icoGroup.position.y = 7.2 + Math.sin(t * 0.62) * 2.4 - scrollProgress * 6.5;
 
-          // Subtle particle drift
-          particles.rotation.y = t * 0.025 + scrollProgress * 0.4;
-          particles.rotation.x = t * 0.012;
+          // Satellite Octahedron
+          satellite.rotation.x = t * 0.55;
+          satellite.rotation.z = t * 0.45;
+          satellite.position.x = -17 + Math.sin(t * 0.4) * 3.2;
+          satellite.position.y = -7.5 + Math.cos(t * 0.52) * 2.5 + scrollProgress * 8;
+          satellite.material.color.lerpColors(colorCyan, colorGreen, (Math.cos(t * 0.5) + 1) * 0.5);
 
-          // Camera mouse parallax
-          camera.position.x += (normMouseX * 3.2 - camera.position.x) * 0.04;
-          camera.position.y += (-normMouseY * 2.4 - camera.position.y) * 0.04;
+          // Gentle wave motion on particle field
+          const posAttr = particleGeo.attributes.position;
+          for (let i = 0; i < particleCount; i += 3) {
+            const i3 = i * 3;
+            posAttr.array[i3 + 1] =
+              basePositions[i3 + 1] + Math.sin(t * 0.75 + basePositions[i3] * 0.06) * 0.9;
+          }
+          posAttr.needsUpdate = true;
+
+          particles.rotation.y = t * 0.024 + scrollProgress * 0.45;
+          particles.rotation.x = t * 0.01;
+
+          // Ripple cyber-grid waves
+          for (let i = 0; i < gridPosAttr.count; i++) {
+            const gx = gridPosAttr.getX(i);
+            const gz = gridPosAttr.getZ(i);
+            const waveY = Math.sin(gx * 0.09 + t * 1.4) * 1.1 + Math.cos(gz * 0.1 + t * 1.1) * 1.1;
+            gridPosAttr.setY(i, waveY);
+          }
+          gridPosAttr.needsUpdate = true;
+
+          // Camera mouse parallax + subtle scroll zoom
+          const targetCamX = normMouseX * 3.6;
+          const targetCamY = 1.5 - normMouseY * 2.6;
+          const targetCamZ = 36 - scrollProgress * 4.5;
+
+          camera.position.x += (targetCamX - camera.position.x) * 0.045;
+          camera.position.y += (targetCamY - camera.position.y) * 0.045;
+          camera.position.z += (targetCamZ - camera.position.z) * 0.045;
           camera.lookAt(0, 0, 0);
 
           renderer.render(scene, camera);
